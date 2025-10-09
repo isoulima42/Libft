@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 03:05:01 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/01 13:00:01 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/09 02:12:32 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,42 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	unsigned char	*d;
-	unsigned char	*s;
-	unsigned char	tmp[n];
+	size_t				i;
+	unsigned char		*d;
+	unsigned const char	*s;
 
 	i = 0;
 	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	if (!dst && !src)
+	s = (unsigned const char *)src;
+	if (!dest && !src)
 		return (NULL);
-	while (i < n)
+	if (d > s)
 	{
-		tmp[i] = s[i];
-		i++;
+		while (n-- > 0)
+			d[n] = s[n];
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		d[i] = tmp[i];
-		i++;
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
 	return (dest);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main (void)
-{
-	char	src[50] = "1234";
-	char	*dest = &src[4];
 
-	strcpy(dest, "Allo Bassem");
-	ft_memmove(dest, src, 12);
-	printf("src: %s\n", src); // Affiche le contenu de src
-    printf("dest: %s\n", dest); // Affiche le contenu de dest
+// #include <stdio.h>
+// #include <string.h>
+// int main (void)
+// {
+// 	char	src[50] = "1234";
+// 	char	*dest = &src[4];
 
-    return 0;
-}*/
+// 	strcpy(dest, "Allo Bassem");
+// 	ft_memmove(dest, src, 12);
+// 	printf("src: %s\n", src);
+//  printf("dest: %s\n", dest);
+
+//     return 0;
+// }

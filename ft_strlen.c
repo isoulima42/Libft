@@ -6,13 +6,13 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 17:36:39 by isoulima          #+#    #+#             */
-/*   Updated: 2025/09/30 18:04:19 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:13:09 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
