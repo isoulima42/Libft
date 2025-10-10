@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:08:31 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/10 02:01:22 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/10 02:28:41 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,13 @@ static size_t	wordcount(char const *s, char c)
 	return(count);
 }
 
-static size_t	charcount(char const *s, char c)
+static size_t	lenword(char const *s, char c)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			s++;
-		else
+	while (s[i] && s[i] != c)
 		i++;
-	}
 	return(i);
 }
 
@@ -64,15 +59,21 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	w = malloc(charcount(s, c) + wordcount(s, c) + 1);
+	w = malloc(wordcount(s, c) + 1);
 	if (!w)
 		return (0);
 	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
+		{
+			w[j] = malloc(lenword(s + i, c) + 1);
+			if (!w[j])
+				return(0);
 			copy(&w[j++][0],(char *) s+i, c);
+		}
 		i++;
 	}
+	w[j+1] = malloc (1);
 	w[j+1][0] = 0;
 	return(w);
 }
