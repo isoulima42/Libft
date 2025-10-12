@@ -6,13 +6,13 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:08:31 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/10 02:28:41 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/10 14:48:40 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void copy(char *dst, char *src, char c)
+static void	copy(char *dst, const char *src, char c)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ void copy(char *dst, char *src, char c)
 	dst[i] = 0;
 }
 
-static size_t	wordcount(char const *s, char c)
+static size_t	count(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -38,17 +38,25 @@ static size_t	wordcount(char const *s, char c)
 			count++;
 		i++;
 	}
-	return(count);
+	return (count);
 }
 
-static size_t	lenword(char const *s, char c)
+static size_t	len(char const *s, char c)
 {
 	size_t	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
 		i++;
-	return(i);
+	return (i);
+}
+
+static char	**frit(char **w, size_t i)
+{
+	while (i > 0)
+		free(w[--i]);
+	free(w);
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -59,34 +67,34 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	w = malloc(wordcount(s, c) + 1);
+	if (!s)
+		return (0);
+	w = malloc(sizeof(char *) * (count(s, c) + 1));
 	if (!w)
 		return (0);
 	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
-			w[j] = malloc(lenword(s + i, c) + 1);
+			w[j] = malloc(len(s + i, c) + 1);
 			if (!w[j])
-				return(0);
-			copy(&w[j++][0],(char *) s+i, c);
+				return (frit(w, j));
+			copy(w[j++], s + i, c);
 		}
 		i++;
 	}
-	w[j+1] = malloc (1);
-	w[j+1][0] = 0;
-	return(w);
+	w[j] = 0;
+	return (w);
 }
-#include<stdio.h>
-int main (void)
-{
-	char	*str = "J'aime pas les arbres";
-	char	**tab;
-	size_t	i = 0;
+// #include<stdio.h>
+// int main (void)
+// {
+// 	char	*str = "J'aime pas les arbres";
+// 	char	**tab;
+// 	size_t	i = 0;
 
-	tab = ft_split(str, ' ');
-	while (tab[i])
-		printf("%s\n", tab[i++]);
-	return (0);
-}
-
+// 	tab = ft_split(str, ' ');
+// 	while (tab[i])
+// 		printf("%s\n", tab[i++]);
+// 	return (0);
+// }

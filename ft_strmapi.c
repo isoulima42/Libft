@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 13:53:36 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/10 14:46:41 by isoulima         ###   ########.fr       */
+/*   Created: 2025/10/11 13:16:51 by isoulima          #+#    #+#             */
+/*   Updated: 2025/10/11 17:25:09 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	size_t	i;
-	size_t	j;
+	char			*str;
+	unsigned int	i;
 
 	i = 0;
-	while (s1[i] && ft_strchr(set, s1[i]))
-		i++;
-	j = ft_strlen(s1);
-	while (j > i && ft_strchr(set, s1[j - 1]))
-		j--;
-	str = malloc(j - i + 1);
+	if (!s || !f)
+		return (0);
+	str = malloc (ft_strlen(s) + 1);
 	if (!str)
 		return (0);
-	ft_strlcpy(str, s1 + i, j - i + 1);
+	while (s[i])
+		str[i] = (f)(i, s[i++]);
+	str[i] = 0;
 	return (str);
 }
-
-// #include<stdio.h>
-// int main (void)
-// {
-// 	char	*set = "abc";
-// 	char	*s1 = "aaababababaccccJ'aime pas les arbresbcaacacacabc";
-
-// 	printf("%s\n", ft_strtrim(s1, set));
-// 	return (0);
-// }
