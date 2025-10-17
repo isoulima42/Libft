@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 15:52:29 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/07 17:51:35 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:29:32 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 
 	i = ft_strlen(s);
-	while (s[i] != c)
+	while (s[i] != (char)c)
 	{
 		if (i == 0)
 			return (NULL);
