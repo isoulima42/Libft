@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 18:41:57 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/08 23:56:30 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:58:34 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,3 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (*str++ - 48);
 	return (res * neg);
 }
-// #include <stdio.h>
-
-// int main (void)
-// {
-// 	char *s = "  -4546597";
-
-// 	printf("%d\n", ft_atoi(s));
-// 	return (0);
-// }

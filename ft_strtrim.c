@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:53:36 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/10 14:46:41 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 22:00:02 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, s1 + i, j - i + 1);
 	return (str);
 }
-
-// #include<stdio.h>
-// int main (void)
-// {
-// 	char	*set = "abc";
-// 	char	*s1 = "aaababababaccccJ'aime pas les arbresbcaacacacabc";
-
-// 	printf("%s\n", ft_strtrim(s1, set));
-// 	return (0);
-// }

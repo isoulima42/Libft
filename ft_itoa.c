@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 14:49:36 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/10 16:36:58 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:58:49 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,3 @@ char	*ft_itoa(int n)
 	res[len(x)+s] = 0;
 	return (res);
 }
-
-// #include <stdio.h>
-
-// int main (void)
-// {
-// 	int i = -2147483648;
-
-// 	printf("%d\n", i);
-// 	printf("%s\n", ft_itoa(i));
-// }

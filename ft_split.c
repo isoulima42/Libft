@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:08:31 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/10 14:48:40 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:59:22 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,3 @@ char	**ft_split(char const *s, char c)
 	w[j] = 0;
 	return (w);
 }
-// #include<stdio.h>
-// int main (void)
-// {
-// 	char	*str = "J'aime pas les arbres";
-// 	char	**tab;
-// 	size_t	i = 0;
-
-// 	tab = ft_split(str, ' ');
-// 	while (tab[i])
-// 		printf("%s\n", tab[i++]);
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:28:28 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/08 18:41:17 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 22:00:06 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,3 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-// #include <stdio.h>
-
-// int	main (void)
-// {
-// 	const char	*big = "Allo Bassem";
-// 	const char	*little = "ss";
-
-// 	printf("%s\n", ft_strnstr(big, little, 9));
-// 	return (0);
-// }

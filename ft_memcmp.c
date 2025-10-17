@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 12:46:30 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/08 13:27:09 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:59:06 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-// #include<stdio.h>
-// int main (void)
-// {
-// 	char *str = "Bonj";
-// 	char *str2 = "Bonxoir";
-// 	printf("%d\n", ft_memcmp(str, str2, 4));
-// }

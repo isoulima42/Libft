@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 03:05:01 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/09 02:12:32 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 21:59:13 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main (void)
-// {
-// 	char	src[50] = "1234";
-// 	char	*dest = &src[4];
-
-// 	strcpy(dest, "Allo Bassem");
-// 	ft_memmove(dest, src, 12);
-// 	printf("src: %s\n", src);
-//  printf("dest: %s\n", dest);
-
-//     return 0;
-// }

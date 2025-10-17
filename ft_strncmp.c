@@ -6,7 +6,7 @@
 /*   By: isoulima <soulimani.ilir@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 17:52:53 by isoulima          #+#    #+#             */
-/*   Updated: 2025/10/07 19:36:27 by isoulima         ###   ########.fr       */
+/*   Updated: 2025/10/17 22:00:08 by isoulima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }
-// #include<stdio.h>
-// int main (void)
-// {
-// 	char *str = "Bonj";
-// 	char *str2 = "Bonsoir";
-// 	printf("%d\n", ft_strncmp(str, str2, 7));
-// }
